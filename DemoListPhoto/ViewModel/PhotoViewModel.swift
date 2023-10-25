@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class PhotoViewModel {
+    
     var items = PublishSubject<[PhotoModel]>()
     
    public func getPhotoData(){
@@ -23,7 +24,6 @@ class PhotoViewModel {
                 }
                 self?.items.onNext(photoModels)
                 self?.items.onCompleted()
-                
             case .failure(let error) :
                 print("Request Failure with Error : \(error)")
             }

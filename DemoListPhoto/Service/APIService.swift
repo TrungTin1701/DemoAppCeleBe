@@ -37,12 +37,10 @@ func handleAPI<T: Decodable>(_ link: String, responseType: T.Type, completionHan
     guard let url = URL(string: link) else {
         return
     }
-
     if !NetworkReachabilityManager()!.isReachable {
         print("No Internet Connection!!!")
         return
     }
-
     AF.request(url).responseDecodable(of: T.self) { (response) in
         completionHandler(response.result)
     }

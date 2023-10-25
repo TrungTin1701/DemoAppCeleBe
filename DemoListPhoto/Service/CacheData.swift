@@ -16,14 +16,11 @@ struct Config {
     
 }
 
-
 var imageCache : NSCache<AnyObject, AnyObject> = {
     let cache = NSCache<AnyObject, AnyObject>()
     cache.totalCostLimit = Config.defaultconfig.memoryLimit
     return cache
 }()
-
-
 
 var decodedImageCache: NSCache<AnyObject, AnyObject> = {
     let cache = NSCache<AnyObject, AnyObject>()
@@ -42,11 +39,9 @@ func imageLoading(for urlImage : URL) ->UIImage? {
     }
     return nil
 }
+//Create func for ImageView : Check cache data ? Load data from URL
 extension UIImageView{
     
-    
-    
-  
         func setImage(from urlImage: String) {
             if let image = decodedImageCache.object(forKey: urlImage as NSString) as? UIImage {
                 self.image = image as UIImage

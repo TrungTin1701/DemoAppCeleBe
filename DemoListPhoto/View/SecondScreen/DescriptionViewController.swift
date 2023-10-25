@@ -12,14 +12,11 @@ class DescriptionViewController: UIViewController {
   
     @IBOutlet weak var myLabelView: UILabel!
     
-    
     @IBOutlet weak var myImageView: UIImageView!
 
     @IBOutlet weak var myUserNameLabel: UILabel!
     
-    
     @IBOutlet weak var myUserImage: UIImageView!
-    
     
     @IBOutlet weak var myUserBio: UILabel!
     
@@ -27,11 +24,11 @@ class DescriptionViewController: UIViewController {
         self.title = "Detail Screen"
         super.viewDidLoad()
         setupLayout()
-   
         myUserImage.isUserInteractionEnabled  = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         myUserImage.addGestureRecognizer(tapGestureRecognizer)
     }
+    
     func setupLayout(){
         myImageView.clipsToBounds = true
         myImageView.layer.cornerRadius = 15
@@ -46,6 +43,7 @@ class DescriptionViewController: UIViewController {
             myUserBio?.text = photoModel?.user?.bio ?? "No bio yet"
         }  
     }
+    
     @objc func imageTapped(){
         print("On click on Image")
         UIApplication.shared.open(URL(string: (photoModel?.user?.social?.portfolio_url)!)!)

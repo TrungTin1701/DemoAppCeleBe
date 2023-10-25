@@ -51,6 +51,7 @@
 		16C2CBE84E61BE181135E05C /* Pods_DemoListPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoListPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E879B44A5070C5822BCB224 /* Pods-DemoListPhotoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoListPhotoTests.release.xcconfig"; path = "Target Support Files/Pods-DemoListPhotoTests/Pods-DemoListPhotoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BF52B741B0C506FBC3DB4B2 /* Pods-DemoListPhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoListPhoto.debug.xcconfig"; path = "Target Support Files/Pods-DemoListPhoto/Pods-DemoListPhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		55229DF22AE8BACC00932FCA /* DemoRxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DemoRxSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5557EAF82AE6510200DFB5E3 /* DemoListPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoListPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5557EAFB2AE6510200DFB5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5557EAFD2AE6510200DFB5E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		5557EAEF2AE6510200DFB5E3 = {
 			isa = PBXGroup;
 			children = (
+				55229DF22AE8BACC00932FCA /* DemoRxSwift.playground */,
 				5557EAFA2AE6510200DFB5E3 /* DemoListPhoto */,
 				5557EB112AE6510400DFB5E3 /* DemoListPhotoTests */,
 				5557EB1B2AE6510400DFB5E3 /* DemoListPhotoUITests */,

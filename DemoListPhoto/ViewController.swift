@@ -16,10 +16,12 @@ class ViewController: UIViewController, UITableViewDelegate {
    private var viewmodel = PhotoViewModel()
     
     private var bag = DisposeBag()
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.tabBarController?.tabBar.isHidden = true
     }
     @IBOutlet weak var myPhotoTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,14 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate {
         bindTableViewData()
         
     }
+    
     func setupCell(){
-        
         self.myPhotoTableView.separatorStyle = .none
-        
         myPhotoTableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PhotoTableViewCell")
         myPhotoTableView.rx.setDelegate(self).disposed(by: bag)
     }
-    
     
     func bindTableViewData(){
         viewmodel.items.bind(to: myPhotoTableView.rx.items(cellIdentifier: "PhotoTableViewCell", cellType: PhotoTableViewCell.self)){
@@ -50,7 +50,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         
         myPhotoTableView.rx.modelSelected(PhotoModel.self).bind{ [weak self] model in
-            print("Onclick nè!!! \(model.likes)")
             let descriptionScreen = DescriptionViewController()
             descriptionScreen.photoModel = model
             self?.navigationController?.pushViewController(descriptionScreen, animated: true)
