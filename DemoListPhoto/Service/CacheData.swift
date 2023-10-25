@@ -48,7 +48,6 @@ extension UIImageView{
                 debugPrint("Cache from data cache")
                 return
             }
-
             guard let url = URL(string: urlImage) else {
                 return
             }
@@ -63,7 +62,6 @@ extension UIImageView{
                         self?.image = decodeImage
                     }
                 } else {
-                    // Handle the case where imageData is nil (e.g., when the image couldn't be downloaded)
                     print("Failed to load or decode image from URL: \(url)")
                 }
             }

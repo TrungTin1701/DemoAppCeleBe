@@ -11,9 +11,13 @@ import UIKit
 class PhotoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var myPhotoView: UIImageView!
+    
     @IBOutlet weak var myCardView: UIView!
+    
     @IBOutlet weak var myDiscription: UILabel!
+    
     @IBOutlet weak var likeCount: UILabel!
+    
     var imageURL: String?
     
     override func awakeFromNib() {
