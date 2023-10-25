@@ -35,7 +35,7 @@ class DescriptionViewController: UIViewController {
         myImageView.layer.shadowOffset = CGSize(width: 0, height: 5)
         myImageView.layer.shadowOpacity = 0.2
         myImageView.layer.shadowColor = UIColor.black.cgColor
-        if let receiveData = photoModel {
+        if photoModel != nil {
             myImageView.setImage(from: photoModel!.urls.small)
             myLabelView.text = photoModel?.description ?? " No information"
             myUserNameLabel?.text = (photoModel?.user?.name ?? "No name") + "\n" + "Instagram : " + (photoModel?.user?.social?.instagram_username ?? "No infor") + "\n" + "iOS Dev"

@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.tabBarController?.tabBar.isHidden = true
     }
+    
     @IBOutlet weak var myPhotoTableView: UITableView!
     
     override func viewDidLoad() {
@@ -43,11 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate {
             cell.myDiscription?.text = model.alt_description
             cell.likeCount?.text = String(model.likes)
             cell.myPhotoView.setImage(from: model.urls.small)
-           
-        
         }
         .disposed(by: bag)
-        
         
         myPhotoTableView.rx.modelSelected(PhotoModel.self).bind{ [weak self] model in
             let descriptionScreen = DescriptionViewController()
@@ -55,10 +53,6 @@ class ViewController: UIViewController, UITableViewDelegate {
             self?.navigationController?.pushViewController(descriptionScreen, animated: true)
         }.disposed(by: bag)
     }
-    
-    
-    
-
 }
 
 extension ViewController {
