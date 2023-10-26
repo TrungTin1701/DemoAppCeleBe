@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  DemoListPhoto
+
+  Created by Tin/Perry/ServiceDev on 26/10/2023.
+  
+*/
+"noname" = "이름 없음";
+"nobio" = "소개 없음";
+"noinfo" = "정보 없음";

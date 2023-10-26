@@ -36,12 +36,13 @@ class DescriptionViewController: UIViewController {
         myImageView.layer.shadowOpacity = 0.2
         myImageView.layer.shadowColor = UIColor.black.cgColor
         if photoModel != nil {
+         
+            
             myImageView.setImage(from: photoModel!.urls.small)
-            myLabelView.text = photoModel?.description ?? " No information"
-            myUserNameLabel?.text = (photoModel?.user?.name ?? "No name") + "\n" + "Instagram : " + (photoModel?.user?.social?.instagram_username ?? "No infor") + "\n" + "iOS Dev"
-            myUserImage.setImage(from: (photoModel!.user?.profile_image.large)!)
-            myUserBio?.text = photoModel?.user?.bio ?? "No bio yet"
-        }  
+            myLabelView.text = photoModel?.description ?? "noinfo".localized
+            myUserNameLabel?.text = ((photoModel?.user?.name ?? "") + "\nInstagram : " + (photoModel?.user?.social?.instagram_username ?? "") + "\niOS Dev")
+            myUserBio?.text = photoModel?.user?.bio ?? String(localized: "nobio")
+        }
     }
     
     @objc func imageTapped(){
