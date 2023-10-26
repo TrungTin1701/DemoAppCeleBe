@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  DemoListPhoto
+
+  Created by Tin/Perry/ServiceDev on 26/10/2023.
+  
+*/
+"nobio" = "No bio yet";
+"noinfo" = "No information!";
+"noname" = "No Name";

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  DemoListPhoto
+
+  Created by Tin/Perry/ServiceDev on 26/10/2023.
+  
+*/
+"noname" = "Tên không có";
+"nobio" = "Tiểu sử không có";
+"noinfo" = "Thông tin không có";
