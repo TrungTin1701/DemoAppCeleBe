@@ -37,6 +37,7 @@ enum ErrorApiCall : Error{
     case JSONError(NSError?)
     case URLNotValid(NSError?)
     case Timeout
+    case NilData
 }
 
 
