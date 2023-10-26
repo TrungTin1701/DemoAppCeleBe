@@ -31,17 +31,27 @@ enum API_Link {
 //        
 //    }
 //}
+enum ErrorApiCall : Error{
+    case ConnectionError(NSError?)
+    case ServerError(statusCode:Int, message : String?)
+    case JSONError(NSError?)
+    
+}
 
 
-func handleAPI<T: Decodable>(_ link: String, responseType: T.Type, completionHandler: @escaping (Result<T, AFError>) -> Void) {
-    guard let url = URL(string: link) else {
-        return
+class APIService{
+    
+    func handleAPI<T: Decodable>(_ link: String, responseType: T.Type, completionHandler: @escaping (Result<T, AFError>) -> Void) {
+        guard let url = URL(string: link) else {
+            return
+        }
+        if !NetworkReachabilityManager()!.isReachable {
+            print("No Internet Connection!!!")
+            return
+        }
+        AF.request(url).responseDecodable(of: T.self) { (response) in
+            completionHandler(response.result)
+        }
     }
-    if !NetworkReachabilityManager()!.isReachable {
-        print("No Internet Connection!!!")
-        return
-    }
-    AF.request(url).responseDecodable(of: T.self) { (response) in
-        completionHandler(response.result)
-    }
+    
 }

@@ -12,10 +12,10 @@ import RxCocoa
 
 class PhotoViewModel {
     
-    var items = PublishSubject<[PhotoModel]>()
-    
+   var items = PublishSubject<[PhotoModel]>()
+   private let apiservice : APIService = APIService()
    public func getPhotoData(){
-       handleAPI(API_Link.getContentApi,responseType: [PhotoModel].self){ [weak self]
+       apiservice.handleAPI(API_Link.getContentApi,responseType: [PhotoModel].self){ [weak self]
             (result : Result<[PhotoModel],AFError>) in
             switch result {
             case .success(let photoModels) :

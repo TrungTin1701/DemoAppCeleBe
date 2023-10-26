@@ -42,3 +42,35 @@ observerbleRange.subscribe(
     }, onDisposed:  {
         print("Sum \(sum)")
     })
+
+
+
+enum FileError : Error {
+    case pathError
+    case filedCaching
+}
+func cacheLocally()->Completable{
+    return Completable.create{ completable in
+        
+        let success = true
+        
+        guard success else {
+            completable(.error(FileError.filedCaching))
+            return Disposables.create {}
+        }
+            completable(.completed)
+            return Disposables.create {}
+        
+    }
+}
+cacheLocally()
+    .subscribe { completable in
+        switch completable{
+        case .completed:
+            print("Complete with no Error")
+        case .error(let err):
+            print("Error: \(err)")
+        }
+    
+    }
+    .disposed(by: disposableBag)

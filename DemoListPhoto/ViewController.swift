@@ -56,12 +56,9 @@ class ViewController: UIViewController, UITableViewDelegate {
 }
 
 extension ViewController {
-   
     
- 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
     }
- 
-  
+
 }
