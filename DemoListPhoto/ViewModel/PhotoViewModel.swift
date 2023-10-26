@@ -10,25 +10,27 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
-class PhotoViewModel {
-    
-   var items = PublishSubject<[PhotoModel]>()
-   private let apiservice : APIService = APIService()
-   public func getPhotoData(){
-       apiservice.handleAPI(API_Link.getContentApi,responseType: [PhotoModel].self){ [weak self]
-            (result : Result<[PhotoModel],AFError>) in
-            switch result {
-            case .success(let photoModels) :
-                for photoModel in photoModels {
-                    print("Description is \(photoModel.user?.name ?? "Nothing")")
+    class PhotoViewModel {
+        
+       var items = PublishSubject<[PhotoModel]>()
+       private let apiservice : APIService = APIService()
+       public func getPhotoData(){
+           apiservice.handleAPI(API_Link.getContentApi,responseType: [PhotoModel].self){ [weak self]
+                (result : Result<[PhotoModel],ErrorApiCall>) in
+                switch result {
+                case .success(let photoModels) :
+                    for photoModel in photoModels {
+                        print("Description is \(photoModel.user?.name ?? "Nothing")")
+                    }
+                    self?.items.onNext(photoModels)
+                    self?.items.onCompleted()
+                case .failure(let error) :
+                    print("Request Failure with Error : \(error)")
+                    
                 }
-                self?.items.onNext(photoModels)
-                self?.items.onCompleted()
-            case .failure(let error) :
-                print("Request Failure with Error : \(error)")
+           
             }
         }
-    }
     
     
     

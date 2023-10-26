@@ -35,23 +35,54 @@ enum ErrorApiCall : Error{
     case ConnectionError(NSError?)
     case ServerError(statusCode:Int, message : String?)
     case JSONError(NSError?)
-    
+    case URLNotValid(NSError?)
+    case Timeout
 }
 
 
-class APIService{
+import Alamofire
+class APIService {
     
-    func handleAPI<T: Decodable>(_ link: String, responseType: T.Type, completionHandler: @escaping (Result<T, AFError>) -> Void) {
+    func handleAPI<T: Decodable>(_ link: String, responseType: T.Type, completionHandler: @escaping (Result<T, ErrorApiCall>) -> Void) {
         guard let url = URL(string: link) else {
+            completionHandler(.failure(ErrorApiCall.ConnectionError(nil)))
             return
         }
+        
         if !NetworkReachabilityManager()!.isReachable {
-            print("No Internet Connection!!!")
+            completionHandler(.failure(ErrorApiCall.ConnectionError(nil)))
             return
         }
-        AF.request(url).responseDecodable(of: T.self) { (response) in
-            completionHandler(response.result)
+        
+        let requestTimeout: TimeInterval = 5 // 5 seconds
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.timeoutInterval = requestTimeout
+
+        AF.request(urlRequest).responseDecodable(of: T.self) { response in
+            switch response.result {
+            case .success(let value):
+                completionHandler(.success(value))
+            case .failure(let error):
+                if let afError = error as? AFError {
+                    switch afError {
+                    case .responseValidationFailed:
+                        let statusCode = afError.responseCode ?? 0
+                        let message = afError.errorDescription
+                        completionHandler(.failure(ErrorApiCall.ServerError(statusCode: statusCode, message: message)))
+                    case .sessionTaskFailed(let sessionError):
+                        if let urlError = sessionError as? URLError, urlError.code == .timedOut {
+                            completionHandler(.failure(ErrorApiCall.Timeout))
+                        } else {
+                            completionHandler(.failure(ErrorApiCall.ConnectionError(nil)))
+                        }
+                    default:
+                        completionHandler(.failure(ErrorApiCall.ConnectionError(nil)))
+                    }
+                } else {
+                    completionHandler(.failure(ErrorApiCall.ConnectionError(error as NSError?)))
+                }
+            }
         }
     }
-    
 }
