@@ -29,13 +29,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         viewmodel.getPhotoData()
         setupCell()
         bindTableViewData()
-        if let currentLanguage = Bundle.main.preferredLocalizations.first {
-            let filePath = Bundle.main.path(forResource: currentLanguage, ofType: "lproj")
-            
-            print("Language code is \(filePath ?? currentLanguage)")
-        } else {
-            print("Unable to determine the current language.")
-        }
 
     }
     

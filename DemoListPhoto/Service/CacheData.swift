@@ -52,7 +52,7 @@ extension UIImageView{
                 return
             }
 
-            DispatchQueue.global().async {
+            DispatchQueue.global().async(flags: .barrier) {
                 [weak self] in
                 if let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) {
                     debugPrint("Image downloaded from server...")

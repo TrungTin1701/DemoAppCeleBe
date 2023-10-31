@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzR-tk-kbf">
                     <rect key="frame" x="10" y="69" width="373" height="739"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gA1-fJ-UJj">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gA1-fJ-UJj">
                             <rect key="frame" x="10" y="10" width="353" height="200"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="M4J-Us-On2"/>
@@ -45,7 +45,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TA8-G6-v7Z">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.and.scribble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eQS-Pz-Lpc">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.and.scribble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eQS-Pz-Lpc">
                                             <rect key="frame" x="0.0" y="3" width="80" height="77.333333333333329"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="AqX-AT-QRF"/>
@@ -102,7 +102,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NzR-tk-kbf" secondAttribute="bottom" constant="10" id="fMu-H8-Ryz"/>
                 <constraint firstItem="NzR-tk-kbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="fVl-vl-HhB"/>
             </constraints>
-            <point key="canvasLocation" x="279" y="46"/>
+            <point key="canvasLocation" x="278.62595419847327" y="45.774647887323944"/>
         </view>
     </objects>
     <resources>
