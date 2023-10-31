@@ -9,8 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandedCellViewController" customModule="DemoListPhoto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandedTableViewController" customModule="DemoListPhoto" customModuleProvider="target">
             <connections>
+                <outlet property="myExpandedTableView" destination="RbO-Oh-5pB" id="zjo-m1-jqo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-fY-J8r">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RbO-Oh-5pB">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="WGj-fY-J8r" secondAttribute="trailing" id="dbK-BI-Cc8"/>
-                <constraint firstAttribute="bottom" secondItem="WGj-fY-J8r" secondAttribute="bottom" constant="34" id="hsm-dR-q7z"/>
-                <constraint firstItem="WGj-fY-J8r" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="59" id="qXg-7q-cMz"/>
-                <constraint firstItem="WGj-fY-J8r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yVn-JO-spl"/>
+                <constraint firstItem="RbO-Oh-5pB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RP5-XJ-96f"/>
+                <constraint firstItem="RbO-Oh-5pB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cp5-I0-JAZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RbO-Oh-5pB" secondAttribute="trailing" id="h1j-Mt-cnC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RbO-Oh-5pB" secondAttribute="bottom" id="xwZ-1G-KaG"/>
             </constraints>
             <point key="canvasLocation" x="127" y="20"/>
         </view>
@@ -38,6 +39,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

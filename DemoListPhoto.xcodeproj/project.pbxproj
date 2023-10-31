@@ -10,8 +10,12 @@
 		32E2F57B3207FE1AD0DFB284 /* Pods_DemoListPhoto_DemoListPhotoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E9DE3739141BC43DA9FE76 /* Pods_DemoListPhoto_DemoListPhotoUITests.framework */; };
 		5506530B2AEA6B8800B0552C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550F571A2AEA4DD50008D261 /* Localizable.strings */; };
 		550F57172AEA3F550008D261 /* LocalizableConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F57162AEA3F550008D261 /* LocalizableConfig.swift */; };
-		552E79162AF093EC005F19A8 /* ExpandedCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E79142AF093EC005F19A8 /* ExpandedCellViewController.swift */; };
-		552E79172AF093EC005F19A8 /* ExpandedCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552E79152AF093EC005F19A8 /* ExpandedCellViewController.xib */; };
+		552E79162AF093EC005F19A8 /* ExpandedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E79142AF093EC005F19A8 /* ExpandedTableViewController.swift */; };
+		552E79172AF093EC005F19A8 /* ExpandedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552E79152AF093EC005F19A8 /* ExpandedTableViewController.xib */; };
+		552E791C2AF09E04005F19A8 /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E791A2AF09E04005F19A8 /* ExpandedTableViewCell.swift */; };
+		552E791D2AF09E04005F19A8 /* ExpandedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552E791B2AF09E04005F19A8 /* ExpandedTableViewCell.xib */; };
+		552E79212AF0D077005F19A8 /* ExpandedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E79202AF0D077005F19A8 /* ExpandedData.swift */; };
+		552E79242AF0D28B005F19A8 /* CellDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E79232AF0D28B005F19A8 /* CellDataViewModel.swift */; };
 		5557EAFC2AE6510200DFB5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557EAFB2AE6510200DFB5E3 /* AppDelegate.swift */; };
 		5557EAFE2AE6510200DFB5E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557EAFD2AE6510200DFB5E3 /* SceneDelegate.swift */; };
 		5557EB002AE6510200DFB5E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557EAFF2AE6510200DFB5E3 /* ViewController.swift */; };
@@ -66,8 +70,12 @@
 		550F571B2AEA4DF20008D261 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		550F571C2AEA4E050008D261 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55229DF22AE8BACC00932FCA /* DemoRxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DemoRxSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		552E79142AF093EC005F19A8 /* ExpandedCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCellViewController.swift; sourceTree = "<group>"; };
-		552E79152AF093EC005F19A8 /* ExpandedCellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedCellViewController.xib; sourceTree = "<group>"; };
+		552E79142AF093EC005F19A8 /* ExpandedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewController.swift; sourceTree = "<group>"; };
+		552E79152AF093EC005F19A8 /* ExpandedTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedTableViewController.xib; sourceTree = "<group>"; };
+		552E791A2AF09E04005F19A8 /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
+		552E791B2AF09E04005F19A8 /* ExpandedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedTableViewCell.xib; sourceTree = "<group>"; };
+		552E79202AF0D077005F19A8 /* ExpandedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedData.swift; sourceTree = "<group>"; };
+		552E79232AF0D28B005F19A8 /* CellDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDataViewModel.swift; sourceTree = "<group>"; };
 		5557EAF82AE6510200DFB5E3 /* DemoListPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoListPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5557EAFB2AE6510200DFB5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5557EAFD2AE6510200DFB5E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,13 +146,49 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
-		552E79132AF093CA005F19A8 /* ExpandedCell */ = {
+		552E79132AF093CA005F19A8 /* ExpandedTableView */ = {
 			isa = PBXGroup;
 			children = (
-				552E79142AF093EC005F19A8 /* ExpandedCellViewController.swift */,
-				552E79152AF093EC005F19A8 /* ExpandedCellViewController.xib */,
+				552E79182AF09DD2005F19A8 /* TableView */,
+				552E79192AF09DE6005F19A8 /* TableViewCell */,
+				552E79222AF0D271005F19A8 /* DataViewModel */,
+				552E791F2AF0D058005F19A8 /* Data */,
 			);
-			path = ExpandedCell;
+			path = ExpandedTableView;
+			sourceTree = "<group>";
+		};
+		552E79182AF09DD2005F19A8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				552E79142AF093EC005F19A8 /* ExpandedTableViewController.swift */,
+				552E79152AF093EC005F19A8 /* ExpandedTableViewController.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		552E79192AF09DE6005F19A8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				552E791A2AF09E04005F19A8 /* ExpandedTableViewCell.swift */,
+				552E791B2AF09E04005F19A8 /* ExpandedTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		552E791F2AF0D058005F19A8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				552E79202AF0D077005F19A8 /* ExpandedData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		552E79222AF0D271005F19A8 /* DataViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				552E79232AF0D28B005F19A8 /* CellDataViewModel.swift */,
+			);
+			path = DataViewModel;
 			sourceTree = "<group>";
 		};
 		5557EAEF2AE6510200DFB5E3 = {
@@ -179,6 +223,7 @@
 				55BA2B972AEBB39D00F1C550 /* PlayVideo */,
 				550F57152AEA3F360008D261 /* Localizable */,
 				5557EB2E2AE651A300DFB5E3 /* Service */,
+				552E79132AF093CA005F19A8 /* ExpandedTableView */,
 				5557EB2D2AE6518F00DFB5E3 /* View */,
 				5557EB2C2AE6517B00DFB5E3 /* ViewModel */,
 				5557EB2B2AE6516A00DFB5E3 /* Model */,
@@ -229,7 +274,6 @@
 		5557EB2D2AE6518F00DFB5E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				552E79132AF093CA005F19A8 /* ExpandedCell */,
 				559E33BE2AE7A1EA00B674C6 /* SecondScreen */,
 				5557EB352AE66F1500DFB5E3 /* PhotoViewCell */,
 			);
@@ -425,11 +469,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5557EB392AE66F3E00DFB5E3 /* PhotoTableViewCell.xib in Resources */,
-				552E79172AF093EC005F19A8 /* ExpandedCellViewController.xib in Resources */,
+				552E79172AF093EC005F19A8 /* ExpandedTableViewController.xib in Resources */,
 				5506530B2AEA6B8800B0552C /* Localizable.strings in Resources */,
 				5557EB082AE6510400DFB5E3 /* LaunchScreen.storyboard in Resources */,
 				559E33BD2AE7601F00B674C6 /* Assets.xcassets in Resources */,
 				559E33CC2AE7AA1300B674C6 /* DescriptionViewController.xib in Resources */,
+				552E791D2AF09E04005F19A8 /* ExpandedTableViewCell.xib in Resources */,
 				5557EB032AE6510200DFB5E3 /* Main.storyboard in Resources */,
 				55BA2B9B2AEBB3B200F1C550 /* VideoPlayViewController.xib in Resources */,
 				55BA2B9F2AEBB5EF00F1C550 /* test.mp4 in Resources */,
@@ -562,6 +607,8 @@
 			files = (
 				55872AA62AEF50180024F0CD /* CustomButton.swift in Sources */,
 				55BA2BA22AEBBC4F00F1C550 /* CustomGradientLabelView.swift in Sources */,
+				552E79242AF0D28B005F19A8 /* CellDataViewModel.swift in Sources */,
+				552E791C2AF09E04005F19A8 /* ExpandedTableViewCell.swift in Sources */,
 				557D572D2AE6B9D300ED1A14 /* CacheData.swift in Sources */,
 				5592C33F2AEF845100A4637B /* Colors.swift in Sources */,
 				5557EB382AE66F3E00DFB5E3 /* PhotoTableViewCell.swift in Sources */,
@@ -570,8 +617,9 @@
 				5557EAFC2AE6510200DFB5E3 /* AppDelegate.swift in Sources */,
 				5557EB302AE651BD00DFB5E3 /* APIService.swift in Sources */,
 				550F57172AEA3F550008D261 /* LocalizableConfig.swift in Sources */,
-				552E79162AF093EC005F19A8 /* ExpandedCellViewController.swift in Sources */,
+				552E79162AF093EC005F19A8 /* ExpandedTableViewController.swift in Sources */,
 				559E33CB2AE7AA1300B674C6 /* DescriptionViewController.swift in Sources */,
+				552E79212AF0D077005F19A8 /* ExpandedData.swift in Sources */,
 				5557EB322AE65D3200DFB5E3 /* PhotoModel.swift in Sources */,
 				55BA2B9A2AEBB3B200F1C550 /* VideoPlayViewController.swift in Sources */,
 				5557EAFE2AE6510200DFB5E3 /* SceneDelegate.swift in Sources */,
@@ -778,6 +826,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8U368U57XX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoListPhoto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -807,6 +856,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8U368U57XX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoListPhoto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
