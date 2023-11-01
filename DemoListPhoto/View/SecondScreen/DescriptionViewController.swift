@@ -104,7 +104,7 @@ class DescriptionViewController: UIViewController {
 //            
 //            player.play()
 //        }
-        self.navigationController?.pushViewController(ExpandedTableViewController(), animated: true)
+        self.navigationController?.pushViewController(PlayVideoViewController(), animated: true)
     }
     
 }

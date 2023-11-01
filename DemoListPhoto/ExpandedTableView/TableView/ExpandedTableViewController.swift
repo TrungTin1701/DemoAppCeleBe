@@ -18,10 +18,7 @@ class ExpandedTableViewController: UIViewController, UITableViewDelegate,UITable
         super.viewDidLoad()
         self.title = "Expanded Cell"
         // Do any additional setup after loading the view.
-        myExpandedTableView.estimatedRowHeight = UITableView.automaticDimension
-        myExpandedTableView.rowHeight = UITableView.automaticDimension
-        self.myExpandedTableView.delegate = self
-        self.myExpandedTableView.dataSource = self
+
         setupCell()
         bindingData()
         vm.getData()
@@ -38,7 +35,7 @@ class ExpandedTableViewController: UIViewController, UITableViewDelegate,UITable
         cell.cellTappedClosure = {
             [weak self ] indexPath,status in
             self?.vm.changeStatus(status: status, index: indexPath)
-            
+            print("Change Status")
         }
        // cell.delegate = self
         return cell
@@ -47,12 +44,17 @@ class ExpandedTableViewController: UIViewController, UITableViewDelegate,UITable
     func setupCell() {
         myExpandedTableView.separatorStyle = .none
         myExpandedTableView.register(UINib(nibName: "ExpandedTableViewCell", bundle: nil), forCellReuseIdentifier: "ExpandedTableViewCell")
+        myExpandedTableView.estimatedRowHeight = UITableView.automaticDimension
+        myExpandedTableView.rowHeight = UITableView.automaticDimension
+        self.myExpandedTableView.delegate = self
+        self.myExpandedTableView.dataSource = self
     }
     
     func bindingData() {
         vm.data.subscribe { [weak self] model in
             guard let self = self else {return }
             self.myExpandedTableView.reloadData()
+            print("Binding Data")
         }.disposed(by: self.bag)
     }
    

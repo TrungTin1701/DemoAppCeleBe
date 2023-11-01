@@ -17,6 +17,7 @@ class CellDataViewModel {
         self.temp = CellDataModel.mockedData
         self.data.onNext(temp)
         self.data.onCompleted()
+        print("Get Data")
     }
     
     public func changeStatus(status : Bool, index : Int){
