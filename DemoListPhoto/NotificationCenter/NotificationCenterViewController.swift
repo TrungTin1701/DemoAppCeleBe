@@ -13,7 +13,9 @@ class NotificationCenterViewController: UIViewController {
     private let newButton = CustomButton()
     let light = Notification.Name(rawValue: NotificationHehe.light.rawValue)
     let dark = Notification.Name(rawValue: NotificationHehe.dark.rawValue)
-    
+    deinit{
+        NotificationCenter.default.removeObserver(self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCustomButton()
